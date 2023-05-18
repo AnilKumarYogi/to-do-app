@@ -5,6 +5,7 @@ import Input from './TodoComp/Input';
 import MyButton from './TodoComp/MyButton';
 import MyOutput from './TodoComp/MyOutput';
 import React, { useState } from 'react';
+import Clear from './TodoComp/Clear';
 function App() {
   const [todoList,setTodoList] = useState([]);
   const [input,setInput] = useState("");
@@ -14,7 +15,8 @@ function App() {
       <Heading />
       <Input input={input} setInput={setInput} todoList={todoList} setTodoList={setTodoList} />
       <MyButton input={input} setInput={setInput} todoList={todoList} setTodoList={setTodoList} />
-      <MyOutput todoList={todoList}/>
+      <Clear setTodoList={setTodoList}/>
+      <MyOutput todoList={todoList} setTodoList={setTodoList}/>
     </div>
   );
 }
